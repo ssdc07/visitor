@@ -1,12 +1,12 @@
 <?php
 
-namespace kouosl\forum\controllers\backend;
+namespace kouosl\visitor\controllers\backend;
 
-use kouosl\forum\models\SampleData;
-use kouosl\forum\models\UploadImage;
+use kouosl\visitor\models\SampleData;
+use kouosl\visitor\models\UploadImage;
 use Yii;
-use kouosl\forum\models\forum;
-use kouosl\forum\models\forumSearch;
+use kouosl\visitor\models\forum;
+use kouosl\visitor\models\forumSearch;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UnauthorizedHttpException;
@@ -16,7 +16,7 @@ use yii\filters\AccessControl;
 /**
  * SamplesController implements the CRUD actions for Sample model.
  */
-class forumController extends DefaultController
+class visitorController extends DefaultController
 {
     public function behaviors()
     {
@@ -92,7 +92,7 @@ class forumController extends DefaultController
     {
 
     	
-        $model = new forum();
+        $model = new visitor();
 
         $uploadImage = new UploadImage();
 
@@ -170,7 +170,7 @@ class forumController extends DefaultController
     public function actionDelete($id)
     {
 
-        forumData::deleteAll(['sample_id' => $id]);
+        visitorData::deleteAll(['sample_id' => $id]);
 
         $model = $this->findModel($id);
 
@@ -193,7 +193,7 @@ class forumController extends DefaultController
      */
     protected function findModel($id)
     {
-        if (($model = forum::findOne($id)) !== null) {
+        if (($model = visitor::findOne($id)) !== null) {
 
             return $model;
 

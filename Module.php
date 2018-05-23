@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\forum;
+namespace kouosl\visitor;
 use Yii;
 use yii\filters\auth\CompositeAuth;
 use yii\filters\auth\HttpBasicAuth;
@@ -54,19 +54,19 @@ class Module extends \kouosl\base\Module
 
     public function registerTranslations()
     {
-        Yii::$app->i18n->translations['forum/*'] = [
+        Yii::$app->i18n->translations['visitor/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
-            'basePath' => '@kouosl/forum/messages',
+            'basePath' => '@kouosl/visitor/messages',
             'fileMap' => [
-                'forum/forum' => 'forum.php',
+                'visitor/visitor' => 'visitor.php',
             ],
         ];
     }
 
     public static function t($category, $message, $params = [], $language = null)
     {
-        return Yii::t('forum/' . $category, $message, $params, $language);
+        return Yii::t('visitor/' . $category, $message, $params, $language);
     }
 
     public static function initRules(){
@@ -75,7 +75,7 @@ class Module extends \kouosl\base\Module
             [
                 'class' => 'yii\rest\UrlRule',
                 'controller' => [
-                    'forum/forum',
+                    'visitor/visitor',
                 ],
                 'tokens' => [
                     '{id}' => '<id:\\w+>'

@@ -1,8 +1,8 @@
 <?php
 
-namespace kouosl\forum\models;
+namespace kouosl\visitor\models;
 
-use kouosl\forum\Module;
+use kouosl\visitor\Module;
 use Yii;
 
 /**

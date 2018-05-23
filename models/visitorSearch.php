@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\forum\models;
+namespace kouosl\visitor\models;
 
 use Yii;
 use yii\base\Model;
@@ -9,7 +9,7 @@ use yii\data\ActiveDataProvider;
 /**
  * SampleSearch represents the model behind the search form about `app\modules\sample\models\Sample`.
  */
-class forumSearch extends forum
+class visitorSearch extends visitor
 {
     /**
      * @inheritdoc
@@ -40,7 +40,7 @@ class forumSearch extends forum
      */
     public function search($params)
     {
-        $query = forum::find();
+        $query = visitor::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\forum\models;
+namespace kouosl\visitor\models;
 
 use Yii;
 
@@ -14,7 +14,7 @@ use Yii;
  *
  * @property data[] $data
  */
-class forum extends \yii\db\ActiveRecord
+class visitor extends \yii\db\ActiveRecord
 {
 
     /**

@@ -1,13 +1,13 @@
 <?php
 
-namespace kouosl\forum\controllers\api;
+namespace kouosl\visitor\controllers\api;
 
-use kouosl\forum\models\forum;
+use kouosl\visitor\models\forum;
 use Yii;
 
-class forumController extends DefaultController {
+class visitorController extends DefaultController {
 	
-	public $modelClass = 'kouosl\forum\models\forum';
+	public $modelClass = 'kouosl\visitor\models\forum';
 	
 	public function actions() {
 		$actions = parent::actions ();
@@ -26,7 +26,7 @@ class forumController extends DefaultController {
 	}
 	
 	public function actionIndex(){
-		return forum::find()->all();
+		return visitor::find()->all();
 	}
 	
 	public function actionCreate(){
@@ -51,7 +51,7 @@ class forumController extends DefaultController {
 
 		$postParams = yii::$app->request->post();
 		
-		$model = forum::findOne($id);
+		$model = visitor::findOne($id);
 
 		if($model = $this->LoadModel($model, $postParams)){
 				if($model->save())
