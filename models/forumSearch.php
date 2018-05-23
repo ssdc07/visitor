@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\browser\models;
+namespace kouosl\forum\models;
 
 use Yii;
 use yii\base\Model;
@@ -9,7 +9,7 @@ use yii\data\ActiveDataProvider;
 /**
  * SampleSearch represents the model behind the search form about `app\modules\sample\models\Sample`.
  */
-class BrowsersSearch extends Browsers
+class forumSearch extends forum
 {
     /**
      * @inheritdoc
@@ -40,7 +40,7 @@ class BrowsersSearch extends Browsers
      */
     public function search($params)
     {
-        $query = Browsers::find();
+        $query = forum::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

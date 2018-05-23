@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\browser\models;
+namespace kouosl\forum\models;
 
 use Yii;
 
@@ -14,7 +14,7 @@ use Yii;
  *
  * @property data[] $data
  */
-class Browsers extends \yii\db\ActiveRecord
+class forum extends \yii\db\ActiveRecord
 {
 
     /**
@@ -59,6 +59,6 @@ class Browsers extends \yii\db\ActiveRecord
      */
     public function getData()
     {
-        return $this->hasMany(BrowserData::className(), ['sample_id' => 'id']);
+        return $this->hasMany(forumData::className(), ['sample_id' => 'id']);
     }
 }

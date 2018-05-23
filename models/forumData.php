@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\browser\models;
+namespace kouosl\forum\models;
 
 use Yii;
 
@@ -13,7 +13,7 @@ use Yii;
  *
  * @property Samples $sample
  */
-class BrowserData extends \yii\db\ActiveRecord
+class forumData extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc

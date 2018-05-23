@@ -1,12 +1,12 @@
 <?php
 
-namespace kouosl\browser\controllers\backend;
+namespace kouosl\forum\controllers\backend;
 
-use kouosl\browser\models\SampleData;
-use kouosl\browser\models\UploadImage;
+use kouosl\forum\models\SampleData;
+use kouosl\forum\models\UploadImage;
 use Yii;
-use kouosl\browser\models\Browsers;
-use kouosl\browser\models\BrowsersSearch;
+use kouosl\forum\models\forum;
+use kouosl\forum\models\forumSearch;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UnauthorizedHttpException;
@@ -16,7 +16,7 @@ use yii\filters\AccessControl;
 /**
  * SamplesController implements the CRUD actions for Sample model.
  */
-class BrowsersController extends DefaultController
+class forumController extends DefaultController
 {
     public function behaviors()
     {
@@ -60,7 +60,7 @@ class BrowsersController extends DefaultController
     	
 
     	
-        $searchModel = new BrowsersSearch();
+        $searchModel = new forumSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('_manage', [
@@ -92,7 +92,7 @@ class BrowsersController extends DefaultController
     {
 
     	
-        $model = new Browsers();
+        $model = new forum();
 
         $uploadImage = new UploadImage();
 
@@ -170,7 +170,7 @@ class BrowsersController extends DefaultController
     public function actionDelete($id)
     {
 
-        BrowserData::deleteAll(['sample_id' => $id]);
+        forumData::deleteAll(['sample_id' => $id]);
 
         $model = $this->findModel($id);
 
@@ -193,7 +193,7 @@ class BrowsersController extends DefaultController
      */
     protected function findModel($id)
     {
-        if (($model = Browsers::findOne($id)) !== null) {
+        if (($model = forum::findOne($id)) !== null) {
 
             return $model;
 

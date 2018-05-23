@@ -1,13 +1,13 @@
 <?php
 
-namespace kouosl\browser\controllers\api;
+namespace kouosl\forum\controllers\api;
 
-use kouosl\browser\models\Browsers;
+use kouosl\forum\models\forum;
 use Yii;
 
-class BrowsersController extends DefaultController {
+class forumController extends DefaultController {
 	
-	public $modelClass = 'kouosl\browser\models\Browsers';
+	public $modelClass = 'kouosl\forum\models\forum';
 	
 	public function actions() {
 		$actions = parent::actions ();
@@ -17,7 +17,7 @@ class BrowsersController extends DefaultController {
 	
 	public function actionView($id){
 
-		$model = Browsers::findOne($id);
+		$model = forum::findOne($id);
 		
 		if(!$model)
 			return ['status' => '404','message' => 'Not Found'];
@@ -26,14 +26,14 @@ class BrowsersController extends DefaultController {
 	}
 	
 	public function actionIndex(){
-		return Browsers::find()->all();
+		return forum::find()->all();
 	}
 	
 	public function actionCreate(){
 
 		$postParams = yii::$app->request->post();
 		
-		$model = new Browsers();
+		$model = new forum();
 	
 		
 		if($model->load($postParams,'') && $model->validate()){
@@ -51,7 +51,7 @@ class BrowsersController extends DefaultController {
 
 		$postParams = yii::$app->request->post();
 		
-		$model = Browsers::findOne($id);
+		$model = forum::findOne($id);
 
 		if($model = $this->LoadModel($model, $postParams)){
 				if($model->save())
@@ -64,7 +64,7 @@ class BrowsersController extends DefaultController {
 	
 	public function actionDelete($id){
 		
-		if(Browsers::findOne($id)->delete())
+		if(forum::findOne($id)->delete())
 			return ['status' => 1];
 		else
 			return ['stauts' => 100];

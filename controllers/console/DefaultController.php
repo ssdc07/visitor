@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\browser\controllers\console;
+namespace kouosl\forum\controllers\console;
 
 
 /**
